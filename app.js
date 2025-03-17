@@ -29,9 +29,16 @@ function limpiarCampo() {
 }
 
 function sortearAmigo() {
+    if(listaDeAmigos.length < 3) {
+        alert('Necesitas ingresar por lo menos 3 amigos para hacer un sorteo');
+        return;
+    }
     let numeroAleatorio = Math.floor(Math.random()*listaDeAmigos.length);
     let amigoSecreto = listaDeAmigos[numeroAleatorio];
 
     ulResultado.innerHTML = `<li>El amigo secreto es: ${amigoSecreto}</li>`;
+
+    let limpiarLista = document.getElementById("listaAmigos");
+    limpiarLista.innerHTML = "";
 
 }
